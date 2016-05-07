@@ -55,7 +55,7 @@ var videoViewer = {
 			// No seek for public videos atm, sorry
 			videoViewer.location = data.fileList.getDownloadUrl(file, videoViewer.dir);
 		} else {
-			videoViewer.location = OC.linkToRemote('webdav') + OC.joinPaths(videoViewer.dir, file);
+			videoViewer.location = OC.filePath('files_videoplayer', 'ajax', 'preview.php') + '?path=' + OC.encodePath(OC.joinPaths(videoViewer.dir, file));
 		}
 		videoViewer.mime = data.$file.attr('data-mime');
 		videoViewer.showPlayer();
