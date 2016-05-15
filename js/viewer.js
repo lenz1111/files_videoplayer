@@ -52,8 +52,7 @@ var videoViewer = {
 		videoViewer.file = file;
 		videoViewer.dir = data.dir;
 		if ($('#isPublic').length){
-			// No seek for public videos atm, sorry
-			videoViewer.location = data.fileList.getDownloadUrl(file, videoViewer.dir);
+			videoViewer.location = data.fileList.getDownloadPreviewUrl(file, videoViewer.dir);
 		} else {
 			videoViewer.location = OC.filePath('files_videoplayer', 'ajax', 'preview.php') + '?path=' + OC.encodePath(OC.joinPaths(videoViewer.dir, file));
 		}
